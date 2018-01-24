@@ -365,16 +365,22 @@
 
 
     
-        <section class="youyan" id="comments">
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
     <script>
+        var disqus_config = function(){
+            this.page.url = 'http://swxctx.top/2018/01/24/hello-world/';
+            this.page.identifier = '2018/01/24/hello-world/';
+        };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
-            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2156507';
+            s.src = '//swxctx-top.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
         }
     </script>
     <script> loadComment(); </script>
-    <div id="uyan_frame"></div>
 </section>
     
 
