@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://swxctx.top/"/>
-  <updated>2018-01-24T06:08:20.000Z</updated>
-  <id>http://swxctx.top/</id>
+  <link href="http://www.swxctx.top/"/>
+  <updated>2018-01-24T10:32:46.000Z</updated>
+  <id>http://www.swxctx.top/</id>
   
   <author>
     <name>Swxctx</name>
@@ -17,23 +17,32 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://swxctx.top/2018/01/24/hello-world/"/>
-    <id>http://swxctx.top/2018/01/24/hello-world/</id>
+    <title>First Content</title>
+    <link href="http://www.swxctx.top/2018/01/24/first-blog/"/>
+    <id>http://www.swxctx.top/2018/01/24/first-blog/</id>
     <published>2018-01-24T06:08:20.000Z</published>
-    <updated>2018-01-24T06:08:20.000Z</updated>
+    <updated>2018-01-24T10:32:46.000Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h3><p>该网站主要用于记录日常工作及学习中的一些知识点及简要代码，主要包含如下几类。</p><ul><li>Golang</li><li>C</li><li>C++</li><li>Java</li><li>机器学习</li><li>日常算法及文章分享</li><li>Linux编程及日常服务器维护<a id="more"></a>如果有错误或不好的地方可通过’关于我’页面的联系方式与我联系，或者点击文章下方进行评论。</li></ul>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
+      &lt;h3 id=&quot;序言&quot;&gt;&lt;a href=&quot;#序言&quot; class=&quot;headerlink&quot; title=&quot;序言&quot;&gt;&lt;/a&gt;序言&lt;/h3&gt;&lt;p&gt;该网站主要用于记录日常工作及学习中的一些知识点及简要代码，主要包含如下几类。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Golang&lt;/li&gt;
+&lt;li&gt;C&lt;/li&gt;
+&lt;li&gt;C++&lt;/li&gt;
+&lt;li&gt;Java&lt;/li&gt;
+&lt;li&gt;机器学习&lt;/li&gt;
+&lt;li&gt;日常算法及文章分享&lt;/li&gt;
+&lt;li&gt;Linux编程及日常服务器维护
     
     </summary>
     
+      <category term="base" scheme="http://www.swxctx.top/categories/base/"/>
+    
+    
+      <category term="基础" scheme="http://www.swxctx.top/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
