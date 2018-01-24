@@ -173,8 +173,6 @@
                             
                                 <a class="fa GitHub" href="https://github.com/Swxctx" title="GitHub"></a>
                             
-                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
-                            
                                 <a class="fa CSDN" href="http://blog.csdn.net/qq_28796345" title="CSDN"></a>
                             
                                 <a class="fa Facebook" href="https://www.facebook.com/yu.xie.5602" title="Facebook"></a>
@@ -244,8 +242,6 @@
                                 <a class="fa 新浪微博" target="_blank" href="https://weibo.com/swxctx/home" title="新浪微博"></a>
                             
                                 <a class="fa GitHub" target="_blank" href="https://github.com/Swxctx" title="GitHub"></a>
-                            
-                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
                             
                                 <a class="fa CSDN" target="_blank" href="http://blog.csdn.net/qq_28796345" title="CSDN"></a>
                             
@@ -401,16 +397,22 @@
 
 
     
-        <section class="youyan" id="comments">
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
     <script>
+        var disqus_config = function(){
+            this.page.url = 'http://swxctx.top/tags/index.html';
+            this.page.identifier = 'tags/index.html';
+        };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
-            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2156507';
+            s.src = '//swxctx-top.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
         }
     </script>
     <script> loadComment(); </script>
-    <div id="uyan_frame"></div>
 </section>
     
 

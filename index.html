@@ -177,8 +177,6 @@
                             
                                 <a class="fa GitHub" href="https://github.com/Swxctx" title="GitHub"></a>
                             
-                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
-                            
                                 <a class="fa CSDN" href="http://blog.csdn.net/qq_28796345" title="CSDN"></a>
                             
                                 <a class="fa Facebook" href="https://www.facebook.com/yu.xie.5602" title="Facebook"></a>
@@ -249,8 +247,6 @@
                             
                                 <a class="fa GitHub" target="_blank" href="https://github.com/Swxctx" title="GitHub"></a>
                             
-                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
-                            
                                 <a class="fa CSDN" target="_blank" href="http://blog.csdn.net/qq_28796345" title="CSDN"></a>
                             
                                 <a class="fa Facebook" target="_blank" href="https://www.facebook.com/yu.xie.5602" title="Facebook"></a>
@@ -269,6 +265,16 @@
       <a href="/2018/01/24/hello-world/" class="article-date">
       <time datetime="2018-01-24T06:08:20.000Z" itemprop="datePublished">2018-01-24</time>
 </a>
+
+ 
+    <a href="/2018/01/24/hello-world/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2018/01/24/hello-world/"></span>
+        
+    </a>
     </div>
   
   <div class="article-inner">
@@ -358,7 +364,21 @@
             }
         })
     </script>
-
+<script id="dsq-count-scr" src="//swxctx-top.disqus.com/count.js" async></script>
+        <script>
+            if ($(".left-col").is(":visible")) {
+                var $disqusCount = $(".disqus-comment-count");
+                $disqusCount.bind("DOMNodeInserted", function(e) {
+                    var num = $(this).text().replace(/[^0-9]/ig,"");
+                    if (num > 0) {
+                        $(this).siblings(".count-comment").text(num);
+                    }
+                    $(this).remove();
+                })
+            } else {
+                $(".disqus-comment-count").remove();
+            }
+        </script>
 
 
 <div class="scroll" id="scroll">
