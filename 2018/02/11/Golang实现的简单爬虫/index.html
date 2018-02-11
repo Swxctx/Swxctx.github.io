@@ -24,7 +24,7 @@
 <meta property="og:image" content="http://www.swxctx.top/2018/02/11/Golang实现的简单爬虫/2_run.png">
 <meta property="og:image" content="http://www.swxctx.top/2018/02/11/Golang实现的简单爬虫/2_result.png">
 <meta property="og:image" content="http://www.swxctx.top/2018/02/11/Golang实现的简单爬虫/2_print.png">
-<meta property="og:updated_time" content="2018-02-11T10:13:45.000Z">
+<meta property="og:updated_time" content="2018-02-11T11:00:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Golang实现的简单爬虫">
 <meta name="twitter:description" content="序言今天在工作上面需要用到爬虫抓取部分信息，之前用Python实现了CSDN博客的抓取，后想到了目前整天面对的Golang，便摸索了一下，实现了一个简单的抓取豆瓣排行的爬虫，主要分为下面几个步骤.  发起Http请求 解析Html元素 存储抓取到的数据">
@@ -323,11 +323,11 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">type Swoop struct &#123;</span><br><span class="line">    url    string</span><br><span class="line">    header map[string]string</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>设置参数后发起请求<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url := &quot;https://movie.douban.com/top250?start=&quot; + strconv.Itoa(i*25)</span><br><span class="line">swoop := &amp;Swoop&#123;url, header&#125;</span><br><span class="line">html := swoop.get_html_header()</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li>解析Html元素<br>发起请求后，接收到Html元素，接下来需要做的及时解析Html元素，将其转化为我们想要的格式，解析Html格式需要到页面浏览器查看对应的Html元素后再做操作：</li>
+<li>解析Html元素<br>发起请求后，接收到Html元素，接下来需要做的就是解析Html元素，将其转化为我们想要的格式，解析Html格式需要到页面浏览器查看对应的Html元素后再做操作：</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//评价人数</span><br><span class="line">commentCount := `&lt;span&gt;(.*?)评价&lt;/span&gt;`</span><br><span class="line">rp2 := regexp.MustCompile(commentCount)</span><br><span class="line">txt2 := rp2.FindAllStringSubmatch(html, -1)</span><br><span class="line"></span><br><span class="line">//评分</span><br><span class="line">pattern3 := `property=&quot;v:average&quot;&gt;(.*?)&lt;/span&gt;`</span><br><span class="line">rp3 := regexp.MustCompile(pattern3)</span><br><span class="line">txt3 := rp3.FindAllStringSubmatch(html, -1)</span><br><span class="line"></span><br><span class="line">//电影名称</span><br><span class="line">pattern4 := `img width=&quot;(.*?)&quot; alt=&quot;(.*?)&quot; src=`</span><br><span class="line">rp4 := regexp.MustCompile(pattern4)</span><br><span class="line">txt4 := rp4.FindAllStringSubmatch(html, -1)</span><br></pre></td></tr></table></figure>
 <p>如下Html页面代码，其中评价包含在”&lt;\span&gt;”标签内，所以在解析的时候需要解析&lt;\span&gt;标签:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;star&quot;&gt;</span><br><span class="line">    &lt;span class=&quot;rating5-t&quot;&gt;&lt;/span&gt;</span><br><span class="line">    &lt;span class=&quot;rating_num&quot; property=&quot;v:average&quot;&gt;9.5&lt;/span&gt;</span><br><span class="line">    &lt;span property=&quot;v:best&quot; content=&quot;10.0&quot;&gt;&lt;/span&gt;</span><br><span class="line">    &lt;span&gt;702861人评价&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<p>如下页面代码，包含了img、alt、src三个value，则需要拿到title就需要解析&lt;\img&gt;标签后读取第二个value值，即title<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img width=&quot;100&quot; alt=&quot;这个杀手不太冷&quot; src=&quot;https://img3.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg&quot; class=&quot;&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如下页面代码，包含了width、alt、src三个value，则需要拿到title就需要解析&lt;\img&gt;标签后读取第二个value值，即alt<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img width=&quot;100&quot; alt=&quot;这个杀手不太冷&quot; src=&quot;https://img3.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg&quot; class=&quot;&quot;&gt;</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>运行代码后效果如下<br>运行中:<br><img src="/2018/02/11/Golang实现的简单爬虫/2_run.png" alt="run"></li>
 </ul>
@@ -343,7 +343,7 @@
         <p><span>本文标题:</span><a href="/2018/02/11/Golang实现的简单爬虫/">Golang实现的简单爬虫</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Swxctx</a></p>
         <p><span>发布时间:</span>2018-02-11, 18:04:40</p>
-        <p><span>最后更新:</span>2018-02-11, 18:13:45</p>
+        <p><span>最后更新:</span>2018-02-11, 19:00:07</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/02/11/Golang实现的简单爬虫/" title="Golang实现的简单爬虫">http://www.swxctx.top/2018/02/11/Golang实现的简单爬虫/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.swxctx.top/2018/02/11/Golang实现的简单爬虫/　　作者: Swxctx" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
