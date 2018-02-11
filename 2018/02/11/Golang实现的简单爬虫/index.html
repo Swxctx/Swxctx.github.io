@@ -13,18 +13,22 @@
 
 
 
-<meta name="description" content="序言该网站主要用于记录日常工作及学习中的一些知识点及简要代码，主要包含如下几类。  Golang C C++ Java 机器学习 日常算法及文章分享 Linux编程及日常服务器维护">
-<meta name="keywords" content="基础">
+<meta name="description" content="序言今天在工作上面需要用到爬虫抓取部分信息，之前用Python实现了CSDN博客的抓取，后想到了目前整天面对的Golang，便摸索了一下，实现了一个简单的抓取豆瓣排行的爬虫，主要分为下面几个步骤.  发起Http请求 解析Html元素 存储抓取到的数据">
+<meta name="keywords" content="Golang">
 <meta property="og:type" content="article">
-<meta property="og:title" content="First Content">
-<meta property="og:url" content="http://www.swxctx.top/2018/01/24/first-blog/index.html">
+<meta property="og:title" content="Golang实现的简单爬虫">
+<meta property="og:url" content="http://www.swxctx.top/2018/02/11/Golang实现的简单爬虫/index.html">
 <meta property="og:site_name" content="Swxctx">
-<meta property="og:description" content="序言该网站主要用于记录日常工作及学习中的一些知识点及简要代码，主要包含如下几类。  Golang C C++ Java 机器学习 日常算法及文章分享 Linux编程及日常服务器维护">
+<meta property="og:description" content="序言今天在工作上面需要用到爬虫抓取部分信息，之前用Python实现了CSDN博客的抓取，后想到了目前整天面对的Golang，便摸索了一下，实现了一个简单的抓取豆瓣排行的爬虫，主要分为下面几个步骤.  发起Http请求 解析Html元素 存储抓取到的数据">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-24T10:32:46.000Z">
+<meta property="og:image" content="http://www.swxctx.top/2018/02/11/Golang实现的简单爬虫/2_run.png">
+<meta property="og:image" content="http://www.swxctx.top/2018/02/11/Golang实现的简单爬虫/2_result.png">
+<meta property="og:image" content="http://www.swxctx.top/2018/02/11/Golang实现的简单爬虫/2_print.png">
+<meta property="og:updated_time" content="2018-02-11T10:13:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="First Content">
-<meta name="twitter:description" content="序言该网站主要用于记录日常工作及学习中的一些知识点及简要代码，主要包含如下几类。  Golang C C++ Java 机器学习 日常算法及文章分享 Linux编程及日常服务器维护">
+<meta name="twitter:title" content="Golang实现的简单爬虫">
+<meta name="twitter:description" content="序言今天在工作上面需要用到爬虫抓取部分信息，之前用Python实现了CSDN博客的抓取，后想到了目前整天面对的Golang，便摸索了一下，实现了一个简单的抓取豆瓣排行的爬虫，主要分为下面几个步骤.  发起Http请求 解析Html元素 存储抓取到的数据">
+<meta name="twitter:image" content="http://www.swxctx.top/2018/02/11/Golang实现的简单爬虫/2_run.png">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -56,7 +60,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>First Content | Swxctx</title>
+<title>Golang实现的简单爬虫 | Swxctx</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -256,11 +260,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-first-blog" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Golang实现的简单爬虫" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/01/24/first-blog/" class="article-date">
-      <time datetime="2018-01-24T06:08:20.000Z" itemprop="datePublished">2018-01-24</time>
+      <a href="/2018/02/11/Golang实现的简单爬虫/" class="article-date">
+      <time datetime="2018-02-11T10:04:40.000Z" itemprop="datePublished">2018-02-11</time>
 </a>
     </div>
   
@@ -271,16 +275,16 @@
     
       <header class="article-header">
         <h1 class="article-title" itemprop="name">
-      First Content
+      Golang实现的简单爬虫
     </h1>
       </header>
       
       <div class="article-info article-info-post">
         <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/base/">base</a>
+    <a class="article-category-link" href="/categories/golang/">golang</a>
     </div>
         <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础/">基础</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Golang/">Golang</a></li></ul>
     </div>
         <div class="clearfix"></div>
       </div>
@@ -289,30 +293,60 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h3><p>该网站主要用于记录日常工作及学习中的一些知识点及简要代码，主要包含如下几类。</p>
+        <h3 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h3><p>今天在工作上面需要用到爬虫抓取部分信息，之前用Python实现了CSDN博客的抓取，后想到了目前整天面对的Golang，便摸索了一下，实现了一个简单的抓取豆瓣排行的爬虫，主要分为下面几个步骤.</p>
 <ul>
-<li>Golang</li>
-<li>C</li>
-<li>C++</li>
-<li>Java</li>
-<li>机器学习</li>
-<li>日常算法及文章分享</li>
-<li>Linux编程及日常服务器维护<a id="more"></a>
-如果有错误或不好的地方可通过’关于我’页面的联系方式与我联系，或者点击文章下方进行评论。</li>
+<li>发起Http请求</li>
+<li>解析Html元素</li>
+<li>存储抓取到的数据<a id="more"></a>
+</li>
 </ul>
+<h3 id="发起http请求"><a href="#发起http请求" class="headerlink" title="发起http请求"></a>发起http请求</h3><p>在请求方面，直接采用的Golang的”net/http”包来进行开发，步骤如下:</p>
+<ul>
+<li>初始化</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">client := &amp;http.Client&#123;&#125;</span><br><span class="line">req, err := http.NewRequest(&quot;GET&quot;, swoop.url, nil)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>set请求信息</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for key, value := range swoop.header &#123;</span><br><span class="line">    req.Header.Add(key, value)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>发起请求</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">resp, err := client.Do(req)</span><br><span class="line">if err != nil &#123;</span><br><span class="line">    log.Fatalf(&quot;do client err-&gt;%v&quot;, err)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>接收响应</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">body, err := ioutil.ReadAll(resp.Body)</span><br><span class="line">if err != nil &#123;</span><br><span class="line">    log.Fatalf(&quot;read resp err-&gt;%v&quot;, err)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="解析Html元素"><a href="#解析Html元素" class="headerlink" title="解析Html元素"></a>解析Html元素</h3><ul>
+<li>设置参数并请求<br>首先需要定义个设置参数结构体，便于操作:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">type Swoop struct &#123;</span><br><span class="line">    url    string</span><br><span class="line">    header map[string]string</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>设置参数后发起请求<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url := &quot;https://movie.douban.com/top250?start=&quot; + strconv.Itoa(i*25)</span><br><span class="line">swoop := &amp;Swoop&#123;url, header&#125;</span><br><span class="line">html := swoop.get_html_header()</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>解析Html元素<br>发起请求后，接收到Html元素，接下来需要做的及时解析Html元素，将其转化为我们想要的格式，解析Html格式需要到页面浏览器查看对应的Html元素后再做操作：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//评价人数</span><br><span class="line">commentCount := `&lt;span&gt;(.*?)评价&lt;/span&gt;`</span><br><span class="line">rp2 := regexp.MustCompile(commentCount)</span><br><span class="line">txt2 := rp2.FindAllStringSubmatch(html, -1)</span><br><span class="line"></span><br><span class="line">//评分</span><br><span class="line">pattern3 := `property=&quot;v:average&quot;&gt;(.*?)&lt;/span&gt;`</span><br><span class="line">rp3 := regexp.MustCompile(pattern3)</span><br><span class="line">txt3 := rp3.FindAllStringSubmatch(html, -1)</span><br><span class="line"></span><br><span class="line">//电影名称</span><br><span class="line">pattern4 := `img width=&quot;(.*?)&quot; alt=&quot;(.*?)&quot; src=`</span><br><span class="line">rp4 := regexp.MustCompile(pattern4)</span><br><span class="line">txt4 := rp4.FindAllStringSubmatch(html, -1)</span><br></pre></td></tr></table></figure>
+<p>如下Html页面代码，其中评价包含在”&lt;\span&gt;”标签内，所以在解析的时候需要解析&lt;\span&gt;标签:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;star&quot;&gt;</span><br><span class="line">    &lt;span class=&quot;rating5-t&quot;&gt;&lt;/span&gt;</span><br><span class="line">    &lt;span class=&quot;rating_num&quot; property=&quot;v:average&quot;&gt;9.5&lt;/span&gt;</span><br><span class="line">    &lt;span property=&quot;v:best&quot; content=&quot;10.0&quot;&gt;&lt;/span&gt;</span><br><span class="line">    &lt;span&gt;702861人评价&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如下页面代码，包含了img、alt、src三个value，则需要拿到title就需要解析&lt;\img&gt;标签后读取第二个value值，即title<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img width=&quot;100&quot; alt=&quot;这个杀手不太冷&quot; src=&quot;https://img3.doubanio.com/view/photo/s_ratio_poster/public/p511118051.jpg&quot; class=&quot;&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>运行代码后效果如下<br>运行中:<br><img src="/2018/02/11/Golang实现的简单爬虫/2_run.png" alt="run"></li>
+</ul>
+<p>运行结束:<br><img src="/2018/02/11/Golang实现的简单爬虫/2_result.png" alt="result"></p>
+<h3 id="数据存储"><a href="#数据存储" class="headerlink" title="数据存储"></a>数据存储</h3><p>数据存储一般根据自己的需要来做，我这里采用的是csv文件存储.<br>如下所示:<br><img src="/2018/02/11/Golang实现的简单爬虫/2_print.png" alt="print"></p>
+<h4 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h4><p><a href="https://github.com/Swxctx/mygo/tree/master/swoop/douban" target="_blank" rel="noopener">源代码链接</a></p>
       
     </div>
     
   </div>
   
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/01/24/first-blog/">First Content</a></p>
+        <p><span>本文标题:</span><a href="/2018/02/11/Golang实现的简单爬虫/">Golang实现的简单爬虫</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Swxctx</a></p>
-        <p><span>发布时间:</span>2018-01-24, 14:08:20</p>
-        <p><span>最后更新:</span>2018-01-24, 18:32:46</p>
+        <p><span>发布时间:</span>2018-02-11, 18:04:40</p>
+        <p><span>最后更新:</span>2018-02-11, 18:13:45</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/01/24/first-blog/" title="First Content">http://www.swxctx.top/2018/01/24/first-blog/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.swxctx.top/2018/01/24/first-blog/　　作者: Swxctx" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/02/11/Golang实现的简单爬虫/" title="Golang实现的简单爬虫">http://www.swxctx.top/2018/02/11/Golang实现的简单爬虫/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.swxctx.top/2018/02/11/Golang实现的简单爬虫/　　作者: Swxctx" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -324,12 +358,12 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/02/11/Golang实现的简单爬虫/">
-                    Golang实现的简单爬虫
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/01/24/first-blog/">
+                    First Content
                 </a>
             </div>
-        
         
     </nav>
   
@@ -337,7 +371,7 @@
 <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#序言"><span class="toc-number">1.</span> <span class="toc-text">序言</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#序言"><span class="toc-number">1.</span> <span class="toc-text">序言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#发起http请求"><span class="toc-number">2.</span> <span class="toc-text">发起http请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解析Html元素"><span class="toc-number">3.</span> <span class="toc-text">解析Html元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据存储"><span class="toc-number">4.</span> <span class="toc-text">数据存储</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#GitHub"><span class="toc-number">4.1.</span> <span class="toc-text">GitHub</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -371,7 +405,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"First Content　| Swxctx　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Golang实现的简单爬虫　| Swxctx　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -386,8 +420,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://www.swxctx.top/2018/01/24/first-blog/';
-            this.page.identifier = '2018/01/24/first-blog/';
+            this.page.url = 'http://www.swxctx.top/2018/02/11/Golang实现的简单爬虫/';
+            this.page.identifier = '2018/02/11/Golang实现的简单爬虫/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -403,15 +437,15 @@
 
 <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/02/11/Golang实现的简单爬虫/" title="上一篇: Golang实现的简单爬虫">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2018/01/24/first-blog/" title="下一篇: First Content">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 
