@@ -13,20 +13,24 @@
 
 
 
-<meta name="description" content="序言 Golang中提供了net/smtp包提供邮件的发送功能，但是在目前已经有了封装成熟的邮件发送包-Gomail，点击此处访问项目GitHub. 在之前的一篇CSDN博客中，我详细的描述过Java对邮件发送、接收以及转发等操作，点击此处访问Java Mail详解，所以在这里也不再讲述SMTP以及POP这些邮件协议，直接通过通过gomail包来发送邮件.">
-<meta name="keywords" content="各语言邮件发送">
+<meta name="description" content="序言 MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。他支持的数据结构非常松散，是类似json的bson格式，因此可以存储比较复杂的数据类型。Mongo最大的特点是他支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引(来自百度). 因为在开发中需要使用Mo">
+<meta name="keywords" content="Mongodb">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Golang实现简单的邮件发送">
-<meta property="og:url" content="http://www.swxctx.top/2018/03/26/Golang实现简单的邮件发送/index.html">
+<meta property="og:title" content="Mac安装Mongodb详解">
+<meta property="og:url" content="http://www.swxctx.top/2018/03/27/Mac安装Mongodb详解/index.html">
 <meta property="og:site_name" content="Swxctx">
-<meta property="og:description" content="序言 Golang中提供了net/smtp包提供邮件的发送功能，但是在目前已经有了封装成熟的邮件发送包-Gomail，点击此处访问项目GitHub. 在之前的一篇CSDN博客中，我详细的描述过Java对邮件发送、接收以及转发等操作，点击此处访问Java Mail详解，所以在这里也不再讲述SMTP以及POP这些邮件协议，直接通过通过gomail包来发送邮件.">
+<meta property="og:description" content="序言 MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。他支持的数据结构非常松散，是类似json的bson格式，因此可以存储比较复杂的数据类型。Mongo最大的特点是他支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引(来自百度). 因为在开发中需要使用Mo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://www.swxctx.top/2018/03/26/Golang实现简单的邮件发送/gmail.png">
-<meta property="og:updated_time" content="2018-03-26T11:02:38.000Z">
+<meta property="og:image" content="http://www.swxctx.top/2018/03/27/Mac安装Mongodb详解/1.png">
+<meta property="og:image" content="http://www.swxctx.top/2018/03/27/Mac安装Mongodb详解/2.png">
+<meta property="og:image" content="http://www.swxctx.top/2018/03/27/Mac安装Mongodb详解/3.png">
+<meta property="og:image" content="http://www.swxctx.top/2018/03/27/Mac安装Mongodb详解/4.png">
+<meta property="og:image" content="http://www.swxctx.top/2018/03/27/Mac安装Mongodb详解/5.png">
+<meta property="og:updated_time" content="2018-03-27T12:20:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Golang实现简单的邮件发送">
-<meta name="twitter:description" content="序言 Golang中提供了net/smtp包提供邮件的发送功能，但是在目前已经有了封装成熟的邮件发送包-Gomail，点击此处访问项目GitHub. 在之前的一篇CSDN博客中，我详细的描述过Java对邮件发送、接收以及转发等操作，点击此处访问Java Mail详解，所以在这里也不再讲述SMTP以及POP这些邮件协议，直接通过通过gomail包来发送邮件.">
-<meta name="twitter:image" content="http://www.swxctx.top/2018/03/26/Golang实现简单的邮件发送/gmail.png">
+<meta name="twitter:title" content="Mac安装Mongodb详解">
+<meta name="twitter:description" content="序言 MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。他支持的数据结构非常松散，是类似json的bson格式，因此可以存储比较复杂的数据类型。Mongo最大的特点是他支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引(来自百度). 因为在开发中需要使用Mo">
+<meta name="twitter:image" content="http://www.swxctx.top/2018/03/27/Mac安装Mongodb详解/1.png">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +62,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Golang实现简单的邮件发送 | Swxctx</title>
+<title>Mac安装Mongodb详解 | Swxctx</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -258,11 +262,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-Golang实现简单的邮件发送" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Mac安装Mongodb详解" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/03/26/Golang实现简单的邮件发送/" class="article-date">
-      <time datetime="2018-03-26T10:44:28.000Z" itemprop="datePublished">2018-03-26</time>
+      <a href="/2018/03/27/Mac安装Mongodb详解/" class="article-date">
+      <time datetime="2018-03-27T10:31:56.000Z" itemprop="datePublished">2018-03-27</time>
 </a>
     </div>
   
@@ -273,16 +277,16 @@
     
       <header class="article-header">
         <h1 class="article-title" itemprop="name">
-      Golang实现简单的邮件发送
+      Mac安装Mongodb详解
     </h1>
       </header>
       
       <div class="article-info article-info-post">
         <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/gloang/">gloang</a>
+    <a class="article-category-link" href="/categories/软件安装/">软件安装</a>
     </div>
         <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/各语言邮件发送/">各语言邮件发送</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mongodb/">Mongodb</a></li></ul>
     </div>
         <div class="clearfix"></div>
       </div>
@@ -292,27 +296,61 @@
       
           
         <h3 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h3><ul>
-<li>Golang中提供了net/smtp包提供邮件的发送功能，但是在目前已经有了封装成熟的邮件发送包-Gomail，<a href="https://github.com/go-gomail/gomail" target="_blank" rel="noopener">点击此处访问项目GitHub</a>.</li>
-<li>在之前的一篇CSDN博客中，我详细的描述过Java对邮件发送、接收以及转发等操作，<a href="https://blog.csdn.net/qq_28796345/article/details/53366324" target="_blank" rel="noopener">点击此处访问Java Mail详解</a>，所以在这里也不再讲述SMTP以及POP这些邮件协议，直接通过通过gomail包来发送邮件.<a id="more"></a>
+<li>MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。他支持的数据结构非常松散，是类似json的bson格式，因此可以存储比较复杂的数据类型。Mongo最大的特点是他支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引(来自百度).</li>
+<li>因为在开发中需要使用Mongodb，所以本文主要讲解Mac环境下的Mongodb的安装，在之后讲解其使用.<a id="more"></a>
 </li>
 </ul>
-<h3 id="Goloang-gomail"><a href="#Goloang-gomail" class="headerlink" title="Goloang-gomail"></a>Goloang-gomail</h3><p>使用gomail包来进行邮件发送时，操作很简单，只需要调用设置好消息体以及通过认证就可以进行邮件的发送，代码如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">	&quot;gopkg.in/gomail.v2&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	m := gomail.NewMessage()</span><br><span class="line">	// 发件人</span><br><span class="line">	m.SetAddressHeader(&quot;From&quot;, &quot;swxctx@sina.com&quot;, &quot;Golang-Mail-Test&quot;)</span><br><span class="line">	// 收件人</span><br><span class="line">	m.SetHeader(&quot;To&quot;, m.FormatAddress(&quot;swxctx@sina.cn&quot;, &quot;go-mail&quot;))</span><br><span class="line">	// 主题</span><br><span class="line">	m.SetHeader(&quot;Subject&quot;, &quot;Gomail&quot;)</span><br><span class="line">	// 发送的body体</span><br><span class="line">	m.SetBody(&quot;text/html&quot;, &quot;&lt;h4&gt;我的测试邮件&lt;h4&gt;&lt;a href = \&quot;http://www.swxctx.top\&quot;&gt;看看我的网站&lt;/a&gt;&quot;)</span><br><span class="line"></span><br><span class="line">	// 发送邮件服务器、端口、发件人账号、发件人密码</span><br><span class="line">	d := gomail.NewPlainDialer(&quot;smtp.sina.com&quot;, 25, &quot;swxctx@sina.com&quot;, &quot;****&quot;)</span><br><span class="line">	if err := d.DialAndSend(m); err != nil &#123;</span><br><span class="line">		panic(err)</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(&quot;mail send success...&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在这里只需要关注于body体的编写，这里可以使用多种Content-type，比如text/html、string等。</p>
-<p>发送成功如图所示：<br><img src="/2018/03/26/Golang实现简单的邮件发送/gmail.png" alt="mail"></p>
+<h3 id="Mongodb安装"><a href="#Mongodb安装" class="headerlink" title="Mongodb安装"></a>Mongodb安装</h3><p>在官方文档中已经讲解过Mongodb的安装方法<a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/" target="_blank" rel="noopener">官方安装文档</a>，主要为下载安装与brew安装两种方式，本文主要讲解下载安装方式.</p>
+<ul>
+<li>Mongodb下载<br><a href="https://www.mongodb.com/download-center?jmp=nav#community" target="_blank" rel="noopener">下载地址</a><br>点击上方下载地址，如下图所示:<br><img src="/2018/03/27/Mac安装Mongodb详解/1.png" alt="1"><br>可点击图中下载按钮直接进行下载，同时也可以通过curl进行下载，执行如下命令即可:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -0 https://fastdl.mongodb.org/osx/mongodb-osx-ssl-x86_64-3.6.3.tgz</span><br></pre></td></tr></table></figure>
+<p>我选择的是下载包的方式，点击下图所示链接跳转:<br><img src="/2018/03/27/Mac安装Mongodb详解/2.png" alt="点击跳转"></p>
+<p>跳转到包下载页面后，我选择了3.6.3的版本，如下图所示:<br><img src="/2018/03/27/Mac安装Mongodb详解/3.png" alt="下载"></p>
+<ul>
+<li><p>安装<br>安装主要分为几步，如下所示.</p>
+<ul>
+<li><p>解压安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ cd Downloads</span><br><span class="line">➜  ~ mv mongodb-osx-ssl-x86_64-3.6.3.tgz /usr/local</span><br><span class="line"></span><br><span class="line">&lt;!-- 解压 --&gt;</span><br><span class="line">➜  tar -zxvf mongodb-osx-ssl-x86_64-3.6.3.tgz</span><br><span class="line"></span><br><span class="line">&lt;!-- 重命名 --&gt;</span><br><span class="line">➜  mv mongodb-osx-x86_64-3.6.3 mongodb-3.6.3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>环境变量配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">➜  vim ~/.zshrc</span><br></pre></td></tr></table></figure>
+<p>添加如下内容:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># mongodb</span><br><span class="line">export PATH=/usr/local/mongodb-3.6.3/bin:$PATH</span><br></pre></td></tr></table></figure>
+<p>使用配置生效:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">➜  source ~/.zshrc</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>配置<br>这时候输入mongod命令启动Mongod，报如下错误:<br><img src="/2018/03/27/Mac安装Mongodb详解/4.png" alt="启动报错"><br>通过错误:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2018-03-27T18:32:19.012+0800 I STORAGE  [initandlisten] exception in initAndListen: IllegalOperation: Attempted to create a lock file on a read-only directory: /data/db, terminating</span><br><span class="line">2018-03-27T18:32:19.012+0800 I CONTROL  [initandlisten] now exiting</span><br><span class="line">2018-03-27T18:32:19.012+0800 I CONTROL  [initandlisten] shutting down with code:100</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>可以看出，这是因为mongodb存储数据的文件夹不能打开(mongodb数据文件存储在/data/db目录下)。<br>这里有两种解决办法：</p>
+<ul>
+<li><p>新建/data/db目录<br>新建目录后，通过如下命令启动mongodb:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">➜  mongod --dbpath /data/db</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过配置文件进行启动<br>Mongodb的配置文件存放在(/usr/local/etc)目录，内容如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">systemLog:</span><br><span class="line">destination: file</span><br><span class="line">path: /usr/local/var/log/mongodb/mongo.log</span><br><span class="line">logAppend: true</span><br><span class="line">storage:</span><br><span class="line">dbPath: /usr/local/var/mongodb</span><br><span class="line">net:</span><br><span class="line">bindIp: 127.0.0.1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>配置文件中主要包括日志(log)的存储路径以及数据问价的存储路径(dbpath)，下一步则首先检查这些目录以及文件是否存在，如果没有存在则新建，检查完毕后，通过如下命令即可启动:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">➜  mongod --config /usr/local/etc/mongod.conf</span><br></pre></td></tr></table></figure></p>
+<p>启动后，通过如下命令启动服务端:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">➜  mongo</span><br></pre></td></tr></table></figure></p>
+<p>启动成功后如下图所示:<br><img src="/2018/03/27/Mac安装Mongodb详解/5.png" alt="启动"></p>
       
     </div>
     
   </div>
   
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/03/26/Golang实现简单的邮件发送/">Golang实现简单的邮件发送</a></p>
+        <p><span>本文标题:</span><a href="/2018/03/27/Mac安装Mongodb详解/">Mac安装Mongodb详解</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Swxctx</a></p>
-        <p><span>发布时间:</span>2018-03-26, 18:44:28</p>
-        <p><span>最后更新:</span>2018-03-26, 19:02:38</p>
+        <p><span>发布时间:</span>2018-03-27, 18:31:56</p>
+        <p><span>最后更新:</span>2018-03-27, 20:20:05</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/03/26/Golang实现简单的邮件发送/" title="Golang实现简单的邮件发送">http://www.swxctx.top/2018/03/26/Golang实现简单的邮件发送/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.swxctx.top/2018/03/26/Golang实现简单的邮件发送/　　作者: Swxctx" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/03/27/Mac安装Mongodb详解/" title="Mac安装Mongodb详解">http://www.swxctx.top/2018/03/27/Mac安装Mongodb详解/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.swxctx.top/2018/03/27/Mac安装Mongodb详解/　　作者: Swxctx" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -324,16 +362,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/03/26/Golang几种排序方式的实现及比较/">
-                    Golang几种排序方式的实现及比较
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/02/11/Golang实现的简单爬虫/">
-                    Golang实现的简单爬虫
+                <a href="/2018/03/26/Golang框架Gin的入门使用/">
+                    Golang框架Gin的入门使用
                 </a>
             </div>
         
@@ -343,7 +375,7 @@
 <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#序言"><span class="toc-number">1.</span> <span class="toc-text">序言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Goloang-gomail"><span class="toc-number">2.</span> <span class="toc-text">Goloang-gomail</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#序言"><span class="toc-number">1.</span> <span class="toc-text">序言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mongodb安装"><span class="toc-number">2.</span> <span class="toc-text">Mongodb安装</span></a></li></ol>
         
     </div>
     <style>
@@ -377,7 +409,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Golang实现简单的邮件发送　| Swxctx　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Mac安装Mongodb详解　| Swxctx　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -392,8 +424,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://www.swxctx.top/2018/03/26/Golang实现简单的邮件发送/';
-            this.page.identifier = '2018/03/26/Golang实现简单的邮件发送/';
+            this.page.url = 'http://www.swxctx.top/2018/03/27/Mac安装Mongodb详解/';
+            this.page.identifier = '2018/03/27/Mac安装Mongodb详解/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -409,15 +441,13 @@
 
 <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/03/26/Golang几种排序方式的实现及比较/" title="上一篇: Golang几种排序方式的实现及比较">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/02/11/Golang实现的简单爬虫/" title="下一篇: Golang实现的简单爬虫">
+            <a href="/2018/03/26/Golang框架Gin的入门使用/" title="下一篇: Golang框架Gin的入门使用">
                 <i class="fa fa-angle-right"></i>
             </a>
         
