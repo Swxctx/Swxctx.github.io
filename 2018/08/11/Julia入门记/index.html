@@ -27,7 +27,7 @@
 <meta property="og:image" content="http://www.swxctx.top/2018/08/11/Julia入门记/hello.png">
 <meta property="og:image" content="http://www.swxctx.top/2018/08/11/Julia入门记/figure.png">
 <meta property="og:image" content="http://www.swxctx.top/2018/08/11/Julia入门记/firstjl.png">
-<meta property="og:updated_time" content="2018-08-11T11:01:00.000Z">
+<meta property="og:updated_time" content="2018-08-11T11:09:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Julia入门记">
 <meta name="twitter:description" content="序言今天偶然看见了关于Julia相关的语言，其介绍是整合了C++、Python、Perl以及Ruby等多种语言的优势，使用JIT编译以及使用了LLVM，具有可选的类型声明，重载，高性能等特性；采用多编程范式，包含指令式、函数式和面向对象编程的特征，同时提供了简易和简洁的高等数值计算，类似于R语言、MATLAB以及Python；因为Julia采用了开源的方式，最大的优势其实就是可以在之后的发展中有大">
@@ -296,7 +296,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h3><p>今天偶然看见了关于Julia相关的语言，其介绍是整合了C++、Python、Perl以及Ruby等多种语言的优势，使用JIT编译以及使用了LLVM，具有可选的类型声明，重载，高性能等特性；采用多编程范式，包含指令式、函数式和面向对象编程的特征，同时提供了简易和简洁的高等数值计算，类似于R语言、MATLAB以及Python；因为Julia采用了开源的方式，最大的优势其实就是可以在之后的发展中有大量的开发者为其做出大量工具以及包的贡献，所以想要入手试一下这个刚发布的Julia(1.0)版本。</p>
+        <h3 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h3><p>今天偶然看见了关于Julia相关的语言，其介绍是整合了C++、Python、Perl以及Ruby等多种语言的优势，使用JIT编译以及使用了LLVM，具有可选的类型声明，重载，高性能等特性；采用多编程范式，包含指令式、函数式和面向对象编程的特征，同时提供了简易和简洁的高等数值计算，类似于R语言、MATLAB以及Python；因为Julia采用了开源的方式，最大的优势其实就是可以在之后的发展中有大量的开发者为其做出大量工具以及包的贡献，所以想要入手试一下这个刚发布的Julia(1.0)版本。<br><a id="more"></a></p>
 <h3 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h3><p><a href="https://github.com/JuliaLang/julia" target="_blank" rel="noopener">GitHub</a><br><a href="https://julialang.org" target="_blank" rel="noopener">官方网站</a><br><a href="https://julialang.org/downloads/" target="_blank" rel="noopener">安装包下载</a><br><a href="https://docs.julialang.org/" target="_blank" rel="noopener">文档说明</a><br><a href="https://pkg.julialang.org/" target="_blank" rel="noopener">资源包</a><br><a href="https://github.com/JuliaLang/julia" target="_blank" rel="noopener">源码包</a></p>
 <p>目前打算对Readme.md文件进行翻译，进行中文版以及使用方式支持，大家有兴趣的可以点击<a href="https://github.com/swxctx/julia" target="_blank" rel="noopener">我的Github</a>进行Fork提PR(Readme.Zn.md).</p>
 <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>通过在Github的介绍，Julia为我们提供了多种安装方式，包括: 源码包编译(比较复杂，需要具备多种语言环境)、安装包下载安装以及直接通过工具安装，因为测试电脑为Mac，所以比较方便，使用如下命令进行安装:</p>
@@ -310,7 +310,8 @@
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">println(&quot;Hello Julia.&quot;)</span><br><span class="line">x = 1</span><br><span class="line">println(x)</span><br><span class="line">y = 2</span><br><span class="line">println(y)</span><br><span class="line">println(x + y)</span><br><span class="line">println(x - y)</span><br><span class="line">println(x * y)</span><br><span class="line">println(x / y)</span><br></pre></td></tr></table></figure>
 <p>Julia的确是很简单的，不需要做任何的引入，也不需要进行变量的声明。</p>
-<p>2.代码运行，如下图所示，跟大部分语言还是一样的：<br><img src="/2018/08/11/Julia入门记/firstjl.png" alt="first"></p>
+<p>2.代码运行，如下图所示，跟大部分语言还是一样的：<br><img src="/2018/08/11/Julia入门记/firstjl.png" alt="first"><br>到这里，Julia的入手已经差不多了，接下来会继续对Julai进行深入学习，大家有兴趣的可以一起探索。</p>
+<p>同时附带一些资源:<br><a href="https://github.com/swxctx/book" target="_blank" rel="noopener">学习资料</a><br><a href="https://github.com/swxctx/wechat" target="_blank" rel="noopener">Go语言微信公众平台SDK(有兴趣可以一起封装其他语言的SDK)</a></p>
       
     </div>
     
@@ -320,7 +321,7 @@
         <p><span>本文标题:</span><a href="/2018/08/11/Julia入门记/">Julia入门记</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Swxctx</a></p>
         <p><span>发布时间:</span>2018-08-11, 18:12:42</p>
-        <p><span>最后更新:</span>2018-08-11, 19:01:00</p>
+        <p><span>最后更新:</span>2018-08-11, 19:09:39</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/08/11/Julia入门记/" title="Julia入门记">http://www.swxctx.top/2018/08/11/Julia入门记/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.swxctx.top/2018/08/11/Julia入门记/　　作者: Swxctx" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
