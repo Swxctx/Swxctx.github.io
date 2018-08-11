@@ -13,20 +13,25 @@
 
 
 
-<meta name="description" content="序言 Golang中提供了net/smtp包提供邮件的发送功能，但是在目前已经有了封装成熟的邮件发送包-Gomail，点击此处访问项目GitHub. 在之前的一篇CSDN博客中，我详细的描述过Java对邮件发送、接收以及转发等操作，点击此处访问Java Mail详解，所以在这里也不再讲述SMTP以及POP这些邮件协议，直接通过通过gomail包来发送邮件.">
-<meta name="keywords" content="各语言邮件发送">
+<meta name="description" content="序言今天偶然看见了关于Julia相关的语言，其介绍是整合了C++、Python、Perl以及Ruby等多种语言的优势，使用JIT编译以及使用了LLVM，具有可选的类型声明，重载，高性能等特性；采用多编程范式，包含指令式、函数式和面向对象编程的特征，同时提供了简易和简洁的高等数值计算，类似于R语言、MATLAB以及Python；因为Julia采用了开源的方式，最大的优势其实就是可以在之后的发展中有大">
+<meta name="keywords" content="Julia">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Golang实现简单的邮件发送">
-<meta property="og:url" content="http://www.swxctx.top/2018/03/26/Golang实现简单的邮件发送/index.html">
+<meta property="og:title" content="Julia入门记">
+<meta property="og:url" content="http://www.swxctx.top/2018/08/11/Julia入门记/index.html">
 <meta property="og:site_name" content="Swxctx">
-<meta property="og:description" content="序言 Golang中提供了net/smtp包提供邮件的发送功能，但是在目前已经有了封装成熟的邮件发送包-Gomail，点击此处访问项目GitHub. 在之前的一篇CSDN博客中，我详细的描述过Java对邮件发送、接收以及转发等操作，点击此处访问Java Mail详解，所以在这里也不再讲述SMTP以及POP这些邮件协议，直接通过通过gomail包来发送邮件.">
+<meta property="og:description" content="序言今天偶然看见了关于Julia相关的语言，其介绍是整合了C++、Python、Perl以及Ruby等多种语言的优势，使用JIT编译以及使用了LLVM，具有可选的类型声明，重载，高性能等特性；采用多编程范式，包含指令式、函数式和面向对象编程的特征，同时提供了简易和简洁的高等数值计算，类似于R语言、MATLAB以及Python；因为Julia采用了开源的方式，最大的优势其实就是可以在之后的发展中有大">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://www.swxctx.top/2018/03/26/Golang实现简单的邮件发送/gmail.png">
-<meta property="og:updated_time" content="2018-03-26T11:02:38.000Z">
+<meta property="og:image" content="http://www.swxctx.top/2018/08/11/Julia入门记/install.jpg">
+<meta property="og:image" content="http://www.swxctx.top/2018/08/11/Julia入门记/help.png">
+<meta property="og:image" content="http://www.swxctx.top/2018/08/11/Julia入门记/run.png">
+<meta property="og:image" content="http://www.swxctx.top/2018/08/11/Julia入门记/hello.png">
+<meta property="og:image" content="http://www.swxctx.top/2018/08/11/Julia入门记/figure.png">
+<meta property="og:image" content="http://www.swxctx.top/2018/08/11/Julia入门记/firstjl.png">
+<meta property="og:updated_time" content="2018-08-11T11:01:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Golang实现简单的邮件发送">
-<meta name="twitter:description" content="序言 Golang中提供了net/smtp包提供邮件的发送功能，但是在目前已经有了封装成熟的邮件发送包-Gomail，点击此处访问项目GitHub. 在之前的一篇CSDN博客中，我详细的描述过Java对邮件发送、接收以及转发等操作，点击此处访问Java Mail详解，所以在这里也不再讲述SMTP以及POP这些邮件协议，直接通过通过gomail包来发送邮件.">
-<meta name="twitter:image" content="http://www.swxctx.top/2018/03/26/Golang实现简单的邮件发送/gmail.png">
+<meta name="twitter:title" content="Julia入门记">
+<meta name="twitter:description" content="序言今天偶然看见了关于Julia相关的语言，其介绍是整合了C++、Python、Perl以及Ruby等多种语言的优势，使用JIT编译以及使用了LLVM，具有可选的类型声明，重载，高性能等特性；采用多编程范式，包含指令式、函数式和面向对象编程的特征，同时提供了简易和简洁的高等数值计算，类似于R语言、MATLAB以及Python；因为Julia采用了开源的方式，最大的优势其实就是可以在之后的发展中有大">
+<meta name="twitter:image" content="http://www.swxctx.top/2018/08/11/Julia入门记/install.jpg">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +63,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Golang实现简单的邮件发送 | Swxctx</title>
+<title>Julia入门记 | Swxctx</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -258,11 +263,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-Golang实现简单的邮件发送" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Julia入门记" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/03/26/Golang实现简单的邮件发送/" class="article-date">
-      <time datetime="2018-03-26T10:44:28.000Z" itemprop="datePublished">2018-03-26</time>
+      <a href="/2018/08/11/Julia入门记/" class="article-date">
+      <time datetime="2018-08-11T10:12:42.000Z" itemprop="datePublished">2018-08-11</time>
 </a>
     </div>
   
@@ -273,16 +278,16 @@
     
       <header class="article-header">
         <h1 class="article-title" itemprop="name">
-      Golang实现简单的邮件发送
+      Julia入门记
     </h1>
       </header>
       
       <div class="article-info article-info-post">
         <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/gloang/">gloang</a>
+    <a class="article-category-link" href="/categories/语言基础/">语言基础</a>
     </div>
         <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/各语言邮件发送/">各语言邮件发送</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Julia/">Julia</a></li></ul>
     </div>
         <div class="clearfix"></div>
       </div>
@@ -291,28 +296,34 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h3><ul>
-<li>Golang中提供了net/smtp包提供邮件的发送功能，但是在目前已经有了封装成熟的邮件发送包-Gomail，<a href="https://github.com/go-gomail/gomail" target="_blank" rel="noopener">点击此处访问项目GitHub</a>.</li>
-<li>在之前的一篇CSDN博客中，我详细的描述过Java对邮件发送、接收以及转发等操作，<a href="https://blog.csdn.net/qq_28796345/article/details/53366324" target="_blank" rel="noopener">点击此处访问Java Mail详解</a>，所以在这里也不再讲述SMTP以及POP这些邮件协议，直接通过通过gomail包来发送邮件.<a id="more"></a>
-</li>
-</ul>
-<h3 id="Goloang-gomail"><a href="#Goloang-gomail" class="headerlink" title="Goloang-gomail"></a>Goloang-gomail</h3><p>使用gomail包来进行邮件发送时，操作很简单，只需要调用设置好消息体以及通过认证就可以进行邮件的发送，代码如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line"></span><br><span class="line">	&quot;gopkg.in/gomail.v2&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	m := gomail.NewMessage()</span><br><span class="line">	// 发件人</span><br><span class="line">	m.SetAddressHeader(&quot;From&quot;, &quot;swxctx@sina.com&quot;, &quot;Golang-Mail-Test&quot;)</span><br><span class="line">	// 收件人</span><br><span class="line">	m.SetHeader(&quot;To&quot;, m.FormatAddress(&quot;swxctx@sina.cn&quot;, &quot;go-mail&quot;))</span><br><span class="line">	// 主题</span><br><span class="line">	m.SetHeader(&quot;Subject&quot;, &quot;Gomail&quot;)</span><br><span class="line">	// 发送的body体</span><br><span class="line">	m.SetBody(&quot;text/html&quot;, &quot;&lt;h4&gt;我的测试邮件&lt;h4&gt;&lt;a href = \&quot;http://www.swxctx.top\&quot;&gt;看看我的网站&lt;/a&gt;&quot;)</span><br><span class="line"></span><br><span class="line">	// 发送邮件服务器、端口、发件人账号、发件人密码</span><br><span class="line">	d := gomail.NewPlainDialer(&quot;smtp.sina.com&quot;, 25, &quot;swxctx@sina.com&quot;, &quot;****&quot;)</span><br><span class="line">	if err := d.DialAndSend(m); err != nil &#123;</span><br><span class="line">		panic(err)</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(&quot;mail send success...&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在这里只需要关注于body体的编写，这里可以使用多种Content-type，比如text/html、string等。</p>
-<p>发送成功如图所示：<br><img src="/2018/03/26/Golang实现简单的邮件发送/gmail.png" alt="mail"></p>
+        <h3 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h3><p>今天偶然看见了关于Julia相关的语言，其介绍是整合了C++、Python、Perl以及Ruby等多种语言的优势，使用JIT编译以及使用了LLVM，具有可选的类型声明，重载，高性能等特性；采用多编程范式，包含指令式、函数式和面向对象编程的特征，同时提供了简易和简洁的高等数值计算，类似于R语言、MATLAB以及Python；因为Julia采用了开源的方式，最大的优势其实就是可以在之后的发展中有大量的开发者为其做出大量工具以及包的贡献，所以想要入手试一下这个刚发布的Julia(1.0)版本。</p>
+<h3 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h3><p><a href="https://github.com/JuliaLang/julia" target="_blank" rel="noopener">GitHub</a><br><a href="https://julialang.org" target="_blank" rel="noopener">官方网站</a><br><a href="https://julialang.org/downloads/" target="_blank" rel="noopener">安装包下载</a><br><a href="https://docs.julialang.org/" target="_blank" rel="noopener">文档说明</a><br><a href="https://pkg.julialang.org/" target="_blank" rel="noopener">资源包</a><br><a href="https://github.com/JuliaLang/julia" target="_blank" rel="noopener">源码包</a></p>
+<p>目前打算对Readme.md文件进行翻译，进行中文版以及使用方式支持，大家有兴趣的可以点击<a href="https://github.com/swxctx/julia" target="_blank" rel="noopener">我的Github</a>进行Fork提PR(Readme.Zn.md).</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>通过在Github的介绍，Julia为我们提供了多种安装方式，包括: 源码包编译(比较复杂，需要具备多种语言环境)、安装包下载安装以及直接通过工具安装，因为测试电脑为Mac，所以比较方便，使用如下命令进行安装:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install Caskroom/cask/julia</span><br></pre></td></tr></table></figure>
+<p>安装过程中需要下载一些东西，所以大概需要3~5分钟的时间，安装界面如图:<br><img src="/2018/08/11/Julia入门记/install.jpg" alt="install"><br>入上图所示，表示Julia已经安装完成了，同样的，在进行每一个新东西的时候，最好的就是Help命令，如图所示:<br><img src="/2018/08/11/Julia入门记/help.png" alt="help"><br>下面运行Julia看一下会是什么效果，通过官方文档:<br>Once it is built, you can run the julia executable after you enter your julia directory and run<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./julia</span><br></pre></td></tr></table></figure></p>
+<p>可以运行命令./julia运行，我这里已经将其设置到环境变量中了，所以直接运行julia就可以，如下图所示:<br><img src="/2018/08/11/Julia入门记/run.png" alt="run"><br>如图所示，Julia已经启动了，那么该如何使用这门语言呢？</p>
+<h3 id="简单入门使用"><a href="#简单入门使用" class="headerlink" title="简单入门使用"></a>简单入门使用</h3><p>在文章的开头已经介绍过Julia是一门多编程范式的语言，包含指令式编程，那么这代表我们可以像使用Shell一样的来使用它。首先当然离不开Hello Word，如图所示:<br><img src="/2018/08/11/Julia入门记/hello.png" alt="hello"><br>图中可以看出，我们可以直接通过println来进行输出，是不是很简单呢!<br>通过官方介绍可以看出，Julia主要进攻的领域其实就是数值计算，那么可以试一下它的数值计算是怎么样的，如图所示:<br><img src="/2018/08/11/Julia入门记/figure.png" alt="figure"><br>这样的语句的确是跟Shell很像，毕竟指令式的语言都不会有太大的差别。</p>
+<p>上面已经讲了指令式的编程，那么接下来通过常规的编程方法来试试:</p>
+<ol>
+<li>新建first.jl(后缀名是.jl，这一点从源码可以看出)</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">println(&quot;Hello Julia.&quot;)</span><br><span class="line">x = 1</span><br><span class="line">println(x)</span><br><span class="line">y = 2</span><br><span class="line">println(y)</span><br><span class="line">println(x + y)</span><br><span class="line">println(x - y)</span><br><span class="line">println(x * y)</span><br><span class="line">println(x / y)</span><br></pre></td></tr></table></figure>
+<p>Julia的确是很简单的，不需要做任何的引入，也不需要进行变量的声明。</p>
+<p>2.代码运行，如下图所示，跟大部分语言还是一样的：<br><img src="/2018/08/11/Julia入门记/firstjl.png" alt="first"></p>
       
     </div>
     
   </div>
   
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/03/26/Golang实现简单的邮件发送/">Golang实现简单的邮件发送</a></p>
+        <p><span>本文标题:</span><a href="/2018/08/11/Julia入门记/">Julia入门记</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Swxctx</a></p>
-        <p><span>发布时间:</span>2018-03-26, 18:44:28</p>
-        <p><span>最后更新:</span>2018-03-26, 19:02:38</p>
+        <p><span>发布时间:</span>2018-08-11, 18:12:42</p>
+        <p><span>最后更新:</span>2018-08-11, 19:01:00</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/03/26/Golang实现简单的邮件发送/" title="Golang实现简单的邮件发送">http://www.swxctx.top/2018/03/26/Golang实现简单的邮件发送/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.swxctx.top/2018/03/26/Golang实现简单的邮件发送/　　作者: Swxctx" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/11/Julia入门记/" title="Julia入门记">http://www.swxctx.top/2018/08/11/Julia入门记/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.swxctx.top/2018/08/11/Julia入门记/　　作者: Swxctx" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -324,16 +335,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/03/26/Golang几种排序方式的实现及比较/">
-                    Golang几种排序方式的实现及比较
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/02/11/Golang实现的简单爬虫/">
-                    Golang实现的简单爬虫
+                <a href="/2018/03/27/Mac安装Mongodb详解/">
+                    Mac安装Mongodb详解
                 </a>
             </div>
         
@@ -343,7 +348,7 @@
 <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#序言"><span class="toc-number">1.</span> <span class="toc-text">序言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Goloang-gomail"><span class="toc-number">2.</span> <span class="toc-text">Goloang-gomail</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#序言"><span class="toc-number">1.</span> <span class="toc-text">序言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关资料"><span class="toc-number">2.</span> <span class="toc-text">相关资料</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">3.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单入门使用"><span class="toc-number">4.</span> <span class="toc-text">简单入门使用</span></a></li></ol>
         
     </div>
     <style>
@@ -377,7 +382,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Golang实现简单的邮件发送　| Swxctx　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Julia入门记　| Swxctx　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -392,8 +397,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://www.swxctx.top/2018/03/26/Golang实现简单的邮件发送/';
-            this.page.identifier = '2018/03/26/Golang实现简单的邮件发送/';
+            this.page.url = 'http://www.swxctx.top/2018/08/11/Julia入门记/';
+            this.page.identifier = '2018/08/11/Julia入门记/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -409,15 +414,13 @@
 
 <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/03/26/Golang几种排序方式的实现及比较/" title="上一篇: Golang几种排序方式的实现及比较">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/02/11/Golang实现的简单爬虫/" title="下一篇: Golang实现的简单爬虫">
+            <a href="/2018/03/27/Mac安装Mongodb详解/" title="下一篇: Mac安装Mongodb详解">
                 <i class="fa fa-angle-right"></i>
             </a>
         
