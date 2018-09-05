@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://www.swxctx.top/2018/01/24/first-blog/</loc>
+        <lastmod>2018-09-05T09:19:24.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.swxctx.top/2018/08/11/Julia%E5%85%A5%E9%97%A8%E8%AE%B0/</loc>
+        <lastmod>2018-08-11T11:17:28.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.swxctx.top/2018/03/27/Mac%E5%AE%89%E8%A3%85Mongodb%E8%AF%A6%E8%A7%A3/</loc>
         <lastmod>2018-03-27T12:20:05.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -41,14 +57,6 @@
     <url>
         <loc>http://www.swxctx.top/2018/02/11/Golang%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%AE%80%E5%8D%95%E7%88%AC%E8%99%AB/</loc>
         <lastmod>2018-02-11T11:00:07.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.swxctx.top/2018/01/24/first-blog/</loc>
-        <lastmod>2018-01-24T10:32:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
