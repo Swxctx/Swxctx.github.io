@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.swxctx.top/"/>
-  <updated>2018-08-11T11:17:28.000Z</updated>
+  <updated>2020-06-18T10:20:25.326Z</updated>
   <id>http://www.swxctx.top/</id>
   
   <author>
@@ -15,6 +15,105 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Code利器</title>
+    <link href="http://www.swxctx.top/2020/06/18/Code%E5%88%A9%E5%99%A8/"/>
+    <id>http://www.swxctx.top/2020/06/18/Code利器/</id>
+    <published>2020-06-18T10:13:11.000Z</published>
+    <updated>2020-06-18T10:20:25.326Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Golang"><a href="#Golang" class="headerlink" title="Golang"></a>Golang</h1><h2 id="书籍-博客"><a href="#书籍-博客" class="headerlink" title="书籍/博客"></a>书籍/博客</h2><ul><li><p>Go入门指南<br><a href="https://zengweigang.gitbooks.io/core-go/content/index.html" target="_blank" rel="noopener">https://zengweigang.gitbooks.io/core-go/content/index.html</a></p></li><li><p>Go语言设计与实现<br><a href="https://draveness.me/golang/" target="_blank" rel="noopener">https://draveness.me/golang/</a></p></li><li><p>鸟窝<br><a href="https://colobu.com/" target="_blank" rel="noopener">https://colobu.com/</a></p></li><li><p>Golang标准库文档<br><a href="https://studygolang.com/pkgdoc" target="_blank" rel="noopener">https://studygolang.com/pkgdoc</a></p></li></ul><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><ul><li><p>json to go<br><a href="https://mholt.github.io/json-to-go/" target="_blank" rel="noopener">https://mholt.github.io/json-to-go/</a></p></li><li><p>Golang代码在线编辑调试<br><a href="https://tool.lu/coderunner#" target="_blank" rel="noopener">https://tool.lu/coderunner#</a><br><a href="https://play.golang.org/" target="_blank" rel="noopener">https://play.golang.org/</a></p></li></ul><h2 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h2><ul><li><p>Go内存逃逸分析<br><a href="https://www.do1618.com/archives/1328/go-%E5%86%85%E5%AD%98%E9%80%83%E9%80%B8%E8%AF%A6%E7%BB%86%E5%88%86%E6%9E%90/" target="_blank" rel="noopener">https://www.do1618.com/archives/1328/go-%E5%86%85%E5%AD%98%E9%80%83%E9%80%B8%E8%AF%A6%E7%BB%86%E5%88%86%E6%9E%90/</a>  </p><p>  <a href="https://github.com/mushroomsir/blog/blob/master/Go%E4%B8%ADstring%E8%BD%AC%5B%5Dbyte%E7%9A%84%E9%99%B7%E9%98%B1.md" target="_blank" rel="noopener">https://github.com/mushroomsir/blog/blob/master/Go%E4%B8%ADstring%E8%BD%AC%5B%5Dbyte%E7%9A%84%E9%99%B7%E9%98%B1.md</a></p></li><li><p>Golang调度器GMP原理与调度全分析<br><a href="https://segmentfault.com/a/1190000021951119" target="_blank" rel="noopener">https://segmentfault.com/a/1190000021951119</a></p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Golang&quot;&gt;&lt;a href=&quot;#Golang&quot; class=&quot;headerlink&quot; title=&quot;Golang&quot;&gt;&lt;/a&gt;Golang&lt;/h1&gt;&lt;h2 id=&quot;书籍-博客&quot;&gt;&lt;a href=&quot;#书籍-博客&quot; class=&quot;headerlink&quot; title=
+      
+    
+    </summary>
+    
+      <category term="开发工具" scheme="http://www.swxctx.top/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Base" scheme="http://www.swxctx.top/tags/Base/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Node.js之Mysql的基本操作</title>
+    <link href="http://www.swxctx.top/2018/10/17/Node-js%E4%B9%8BMysql%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
+    <id>http://www.swxctx.top/2018/10/17/Node-js之Mysql的基本操作/</id>
+    <published>2018-10-17T11:21:57.000Z</published>
+    <updated>2018-10-17T11:28:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="依赖安装"><a href="#依赖安装" class="headerlink" title="依赖安装"></a>依赖安装</h3><p>首先执行npm命令安装Mysql依赖，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -d mysql</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>如下图所示安装完成：<br><img src="https://img-blog.csdn.net/20181017174456785?water![在这里插入图片描述](https://img-blog.csdn.net/20181017174458551?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI4Nzk2MzQ1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述">mark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI4Nzk2MzQ1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)</p><h3 id="数据库连接"><a href="#数据库连接" class="headerlink" title="数据库连接"></a>数据库连接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 加载mysql模块</span><br><span class="line">var mysql = require(&apos;mysql&apos;);</span><br><span class="line">// 创建数据库连接</span><br><span class="line">var conn = mysql.createConnection(&#123;</span><br><span class="line">    host: &apos;localhost&apos;,</span><br><span class="line">    user: &apos;root&apos;,</span><br><span class="line">    password: &apos;0707&apos;,</span><br><span class="line">    database: &apos;nodetest&apos;,</span><br><span class="line">&#125;);</span><br><span class="line">conn.connect();</span><br><span class="line">// 测试一下</span><br><span class="line">conn.query(&apos;select count(1) from user&apos;, function (error, results) &#123;</span><br><span class="line">    if (error)&#123;</span><br><span class="line">        console.log(error);</span><br><span class="line">        return;</span><br><span class="line">    &#125;;</span><br><span class="line">    console.log(&apos;results&apos;, results);</span><br><span class="line">&#125;);</span><br><span class="line">// output: results [ RowDataPacket &#123; &apos;count(1)&apos;: 1 &#125; ]</span><br></pre></td></tr></table></figure><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><p>包括基本的增删改查操作。</p><h4 id="数据查询及操作"><a href="#数据查询及操作" class="headerlink" title="数据查询及操作"></a>数据查询及操作</h4><p>对于数据查询其实只需要关注query即可，如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conn.query(sql,params,function (err,results) &#123;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>sql为需要执行的插入、查询、更新、删除等的数据库sql语句，而params是通配符?所对应的值，其中err为操作过程中遇到的错误，而results则是sql实行的结果。</p><h4 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// insert</span><br><span class="line">var insertSql = &apos;insert into user(name) values(?)&apos;</span><br><span class="line">var insertParams = [&apos;node&apos;]</span><br><span class="line">conn.query(insertSql, insertParams, function (err, results) &#123;</span><br><span class="line">    if (err) &#123;</span><br><span class="line">        console.log(&apos;[INSERT ERROR] - &apos;, err);</span><br><span class="line">        return;</span><br><span class="line">    &#125;;</span><br><span class="line">    console.log(&apos;---INSERT---&apos;);</span><br><span class="line">    console.log(results);</span><br><span class="line">    console.log(&apos;---END---&apos;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>执行结果如图：<br><img src="https://img-blog.csdn.net/20181017191726878?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI4Nzk2MzQ1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p><h4 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// select</span><br><span class="line">var sql = &apos;select *from user&apos;</span><br><span class="line">conn.query(sql,function (err,results) &#123;</span><br><span class="line">    if (err)&#123;</span><br><span class="line">        console.log(&apos;[SELECT ERROR] - &apos;, err);</span><br><span class="line">        return;</span><br><span class="line">    &#125;;</span><br><span class="line">    console.log(&apos;---SELECT---&apos;);</span><br><span class="line">    console.log(results);</span><br><span class="line">    console.log(&apos;---END---&apos;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>执行结果如图：<br><img src="https://img-blog.csdn.net/2018101719185346?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI4Nzk2MzQ1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p><h4 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// update</span><br><span class="line">var updateSql = &apos;update user set name=? where id=?&apos;;</span><br><span class="line">var updateParams = [&apos;nodetest&apos;,3];</span><br><span class="line">conn.query(updateSql,updateParams,function (err,results) &#123;</span><br><span class="line">    if (err) &#123;</span><br><span class="line">        console.log(&apos;[UPDATE ERROR] - &apos;, err.message);</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(&apos;---UPDATE---&apos;);</span><br><span class="line">    console.log(&apos;UPDATE affectedRows&apos;, results.affectedRows);</span><br><span class="line">    console.log(&apos;------\n\n&apos;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>执行结果如图：<br><img src="https://img-blog.csdn.net/2018101719191699?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI4Nzk2MzQ1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p><h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// delete</span><br><span class="line">var deleteSql = &apos;delete from user where id=?&apos;;</span><br><span class="line">var deleteParams = [4];</span><br><span class="line">conn.query(deleteSql,deleteParams,function (err,results) &#123;</span><br><span class="line">    if (err) &#123;</span><br><span class="line">        console.log(&apos;[DELETE ERROR] - &apos;, err.message);</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(&apos;---DELETE---&apos;);</span><br><span class="line">    console.log(&apos;DELETE affectedRows&apos;, results.affectedRows);</span><br><span class="line">    console.log(&apos;------\n\n&apos;);  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>执行结果如图：<br><img src="https://img-blog.csdn.net/20181017191931575?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI4Nzk2MzQ1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p><h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><p><a href="https://github.com/usthooz/program_lan/blob/master/js/mysql/mysql.js" target="_blank" rel="noopener">点击查看</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;依赖安装&quot;&gt;&lt;a href=&quot;#依赖安装&quot; class=&quot;headerlink&quot; title=&quot;依赖安装&quot;&gt;&lt;/a&gt;依赖安装&lt;/h3&gt;&lt;p&gt;首先执行npm命令安装Mysql依赖，如下：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm i -d mysql&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="语言基础" scheme="http://www.swxctx.top/categories/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Node.js" scheme="http://www.swxctx.top/tags/Node-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用网站合集</title>
+    <link href="http://www.swxctx.top/2018/10/09/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%AB%99%E5%90%88%E9%9B%86/"/>
+    <id>http://www.swxctx.top/2018/10/09/常用网站合集/</id>
+    <published>2018-10-09T02:33:10.000Z</published>
+    <updated>2018-10-09T03:16:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>该文主要用于记录一些常用到的网站，包括开发工具类、学习类以及日常较为常用的网站及工具。<br><a id="more"></a></p><h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><ol><li><a href="https://www.mysql.com/" target="_blank" rel="noopener">Mysql</a></li><li><a href="https://www.mongodb.com/" target="_blank" rel="noopener">MongoDB</a></li><li><a href="https://redis.io/" target="_blank" rel="noopener">Redis</a></li><li><a href="https://www.influxdata.com/" target="_blank" rel="noopener">Influxdb</a></li><li><a href="http://leveldb.org/" target="_blank" rel="noopener">LevelDB</a></li></ol><h3 id="常用工具"><a href="#常用工具" class="headerlink" title="常用工具"></a>常用工具</h3><ol><li><a href="https://mholt.github.io/json-to-go/" target="_blank" rel="noopener">Json-to-Go</a></li><li><a href="https://play.golang.org/" target="_blank" rel="noopener">Go在线编译</a></li><li><a href="https://devdocs.io/" target="_blank" rel="noopener">Devdocs-编程语言Api查询</a></li><li><a href="https://typora.io/" target="_blank" rel="noopener">typora-macdown编写工具</a></li><li><a href="http://www.gaitubao.com/#" target="_blank" rel="noopener">改图宝</a></li><li><a href="https://www.diycode.cc/trends" target="_blank" rel="noopener">Github全球排行榜</a></li><li><a href="http://xclient.info/?t=e0ec92ebc9ce8ef7b7a48460b06893fa040ff066" target="_blank" rel="noopener">Mac精品应用</a></li></ol><h3 id="Learn"><a href="#Learn" class="headerlink" title="Learn"></a>Learn</h3><ol><li><a href="https://zengweigang.gitbooks.io/core-go/content/eBook/preface.html" target="_blank" rel="noopener">Go语言入门</a></li><li><a href="https://gocn.vip/" target="_blank" rel="noopener">Gocn 技术社区</a></li><li><a href="https://xtutu.gitbooks.io/influxdb-handbook/content/" target="_blank" rel="noopener">influxdb-handbook</a></li><li><a href="https://intetnet.github.io/html/list.html" target="_blank" rel="noopener">Linux部分命令介绍</a></li><li><a href="https://mirrors.tuna.tsinghua.edu.cn/help/gitlab-ce/" target="_blank" rel="noopener">清华大学开源软件镜像站</a></li><li><a href="https://www.tinymind.cn/" target="_blank" rel="noopener">TinyMind-机器学习</a></li><li><a href="http://www.iteye.com/" target="_blank" rel="noopener">ItEye</a></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;该文主要用于记录一些常用到的网站，包括开发工具类、学习类以及日常较为常用的网站及工具。&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="开发工具" scheme="http://www.swxctx.top/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Base" scheme="http://www.swxctx.top/tags/Base/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>First Content</title>
+    <link href="http://www.swxctx.top/2018/09/05/first-blog/"/>
+    <id>http://www.swxctx.top/2018/09/05/first-blog/</id>
+    <published>2018-09-05T09:19:24.000Z</published>
+    <updated>2018-09-05T09:19:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h3><p>该网站主要用于记录日常工作及学习中的一些知识点及简要代码，主要包含如下几类。</p><ul><li>Golang</li><li>C</li><li>C++</li><li>Java</li><li>机器学习</li><li>日常算法及文章分享</li><li>Linux编程及日常服务器维护<a id="more"></a>如果有错误或不好的地方可通过’关于我’页面的联系方式与我联系，或者点击文章下方进行评论。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;序言&quot;&gt;&lt;a href=&quot;#序言&quot; class=&quot;headerlink&quot; title=&quot;序言&quot;&gt;&lt;/a&gt;序言&lt;/h3&gt;&lt;p&gt;该网站主要用于记录日常工作及学习中的一些知识点及简要代码，主要包含如下几类。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Golang&lt;/li&gt;
+&lt;li&gt;C&lt;/li&gt;
+&lt;li&gt;C++&lt;/li&gt;
+&lt;li&gt;Java&lt;/li&gt;
+&lt;li&gt;机器学习&lt;/li&gt;
+&lt;li&gt;日常算法及文章分享&lt;/li&gt;
+&lt;li&gt;Linux编程及日常服务器维护&lt;/li&gt;&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="base" scheme="http://www.swxctx.top/categories/base/"/>
+    
+    
+      <category term="基础" scheme="http://www.swxctx.top/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>Julia入门记</title>
@@ -156,36 +255,6 @@
     
     
       <category term="Golang" scheme="http://www.swxctx.top/tags/Golang/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>First Content</title>
-    <link href="http://www.swxctx.top/2018/01/24/first-blog/"/>
-    <id>http://www.swxctx.top/2018/01/24/first-blog/</id>
-    <published>2018-01-24T06:08:20.000Z</published>
-    <updated>2018-09-05T09:19:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h3><p>该网站主要用于记录日常工作及学习中的一些知识点及简要代码，主要包含如下几类。</p><ul><li>Golang</li><li>C</li><li>C++</li><li>Java</li><li>机器学习</li><li>日常算法及文章分享</li><li>Linux编程及日常服务器维护<a id="more"></a>如果有错误或不好的地方可通过’关于我’页面的联系方式与我联系，或者点击文章下方进行评论。</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;序言&quot;&gt;&lt;a href=&quot;#序言&quot; class=&quot;headerlink&quot; title=&quot;序言&quot;&gt;&lt;/a&gt;序言&lt;/h3&gt;&lt;p&gt;该网站主要用于记录日常工作及学习中的一些知识点及简要代码，主要包含如下几类。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Golang&lt;/li&gt;
-&lt;li&gt;C&lt;/li&gt;
-&lt;li&gt;C++&lt;/li&gt;
-&lt;li&gt;Java&lt;/li&gt;
-&lt;li&gt;机器学习&lt;/li&gt;
-&lt;li&gt;日常算法及文章分享&lt;/li&gt;
-&lt;li&gt;Linux编程及日常服务器维护&lt;/li&gt;&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="base" scheme="http://www.swxctx.top/categories/base/"/>
-    
-    
-      <category term="基础" scheme="http://www.swxctx.top/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
